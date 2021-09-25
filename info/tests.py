@@ -136,8 +136,8 @@ class InfoTest(TestCase):
         self.assertEqual(resp.status_code, 200)
         self.assertQuerysetEqual(resp.context['att_list'], ['<Attendance: ' + s.name + ' : ' + cr.shortname + '>'])
 
-    #teacher
-
+    # teacher
+    #
     # def test_attendance_class(self):
     #     t = self.create_teacher()
     #     Assign.objects.create(teacher=t, class_id=self.create_class(), course=self.create_course())

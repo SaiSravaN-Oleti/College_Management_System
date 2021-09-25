@@ -195,11 +195,11 @@ def t_report(request, assign_id):
 @login_required()
 def timetable(request, class_id):
     asst = AssignTime.objects.filter(assign__class_id=class_id)
-    matrix = [['' for i in range(12)] for j in range(6)]
+    matrix = [['' for i in range(8)] for j in range(6)]
 
     for i, d in enumerate(DAYS_OF_WEEK):
         t = 0
-        for j in range(12):
+        for j in range(8):
             if j == 0:
                 matrix[i][0] = d[0]
                 continue
@@ -219,10 +219,10 @@ def timetable(request, class_id):
 @login_required()
 def t_timetable(request, teacher_id):
     asst = AssignTime.objects.filter(assign__teacher_id=teacher_id)
-    class_matrix = [[True for i in range(12)] for j in range(6)]
+    class_matrix = [[True for i in range(8)] for j in range(6)]
     for i, d in enumerate(DAYS_OF_WEEK):
         t = 0
-        for j in range(12):
+        for j in range(8):
             if j == 0:
                 class_matrix[i][0] = d[0]
                 continue
